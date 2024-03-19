@@ -5,33 +5,40 @@
 
 int search(int *arr, int arr_size, int val);
 
-int main(void) {
-    int numbers[MAX_ARR_SIZE] = {1, 2, 3, 4, 5, 6, 7};
+int main(void)
+{
+  int numbers[MAX_ARR_SIZE] = {1, 2, 3, 4, 5, 6, 7};
 
-    int val;
-    printf("Enter the value to search for: ");
-    scanf("%d", &val);
+  int val;
+  printf("Enter the value to search for: ");
+  scanf("%d", &val);
 
-    int ret = search(numbers, 7, val);
+  int ret = search(numbers, 7, val);
 
-    if (ret == -1) {
-        printf("%d not found in array.\n", val);
-    } else {
-        printf("%d found at position %d in array.\n", val, ret);
-    }
+  if (ret == -1)
+  {
+    printf("%d not found in array.\n", val);
+  }
+  else
+  {
+    printf("%d found at position %d in array.\n", val, ret);
+  }
 
-    return 0;
+  return 0;
 }
 
-int search(int *arr, int arr_size, int val) {
-    int ret = -1;
+int search(int *arr, int arr_size, int val)
+{
+  int ret = -1;
 
-    for (int i = 0; i < arr_size; i++) {
-        if (arr[i] == val) {
-            ret = i;
-            break;
-        }
+  for (int i = 0; i < arr_size; i++)
+  {
+    if (arr[i] == val)
+    {
+      ret = i;
+      break;
     }
+  }
 
-    return ret;
+  return ret;
 }
