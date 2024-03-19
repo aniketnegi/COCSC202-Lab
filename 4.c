@@ -6,8 +6,7 @@
 void arr_sort(int *arr, int arr_size);
 void print_arr(int *arr, int arr_size);
 
-int main(void)
-{
+int main(void) {
   int numbers[ARR_SIZE] = {10, 4, 44, 2, 0, 12, -1, -10, 4, 1};
 
   printf("Original Array: ");
@@ -21,18 +20,15 @@ int main(void)
   return 0;
 }
 
-void arr_sort(int *arr, int arr_size)
-{
+void arr_sort(int *arr, int arr_size) {
   // standard insertion sort
   // faster for smaller arrays
   int i, key, j;
-  for (i = 1; i < arr_size; i++)
-  {
+  for (i = 1; i < arr_size; i++) {
     key = arr[i];
     j = i - 1;
 
-    while (j >= 0 && arr[j] > key)
-    {
+    while (j >= 0 && arr[j] > key) {
       arr[j + 1] = arr[j];
       j = j - 1;
     }
@@ -40,10 +36,8 @@ void arr_sort(int *arr, int arr_size)
   }
 }
 
-void print_arr(int *arr, int arr_size)
-{
-  for (int i = 0; i < arr_size; i++)
-  {
+void print_arr(int *arr, int arr_size) {
+  for (int i = 0; i < arr_size; i++) {
     printf("%d ", arr[i]);
   }
   printf("\n");

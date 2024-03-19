@@ -1,4 +1,5 @@
-// Write a program to find the mean and the median of the numbers stored in an array.
+// Write a program to find the mean and the median of the numbers stored in an
+// array.
 #include <stdio.h>
 
 #define MAX_ARR_SIZE 10
@@ -8,8 +9,7 @@ void sort(int *arr, int arr_size);
 double find_median(int *arr, int arr_size);
 void print_arr(int *arr, int arr_size);
 
-int main(void)
-{
+int main(void) {
   int numbers[MAX_ARR_SIZE] = {10, 4, 44, 2, 0, 12, -1, -10, 4, 1};
 
   printf("The array is: ");
@@ -26,11 +26,9 @@ int main(void)
   return 0;
 }
 
-double find_mean(int *arr, int arr_size)
-{
+double find_mean(int *arr, int arr_size) {
   int sum = 0;
-  for (int i = 0; i < arr_size; i++)
-  {
+  for (int i = 0; i < arr_size; i++) {
     sum += arr[i];
   }
 
@@ -39,18 +37,15 @@ double find_mean(int *arr, int arr_size)
   return mean;
 }
 
-void sort(int *arr, int arr_size)
-{
+void sort(int *arr, int arr_size) {
   // standard insertion sort
   // faster for smaller arrays
   int i, key, j;
-  for (i = 1; i < arr_size; i++)
-  {
+  for (i = 1; i < arr_size; i++) {
     key = arr[i];
     j = i - 1;
 
-    while (j >= 0 && arr[j] > key)
-    {
+    while (j >= 0 && arr[j] > key) {
       arr[j + 1] = arr[j];
       j = j - 1;
     }
@@ -58,27 +53,21 @@ void sort(int *arr, int arr_size)
   }
 }
 
-double find_median(int *arr, int arr_size)
-{
+double find_median(int *arr, int arr_size) {
   sort(arr, arr_size);
   double median;
 
-  if (arr_size % 2 != 0)
-  {
+  if (arr_size % 2 != 0) {
     median = (double)arr[(int)(arr_size / 2)];
-  }
-  else
-  {
+  } else {
     median = (arr[(int)(arr_size / 2) - 1] + arr[(int)(arr_size / 2)]) / 2;
   }
 
   return median;
 }
 
-void print_arr(int *arr, int arr_size)
-{
-  for (int i = 0; i < arr_size; i++)
-  {
+void print_arr(int *arr, int arr_size) {
+  for (int i = 0; i < arr_size; i++) {
     printf("%d ", arr[i]);
   }
   printf("\n");
